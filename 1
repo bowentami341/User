@@ -1,0 +1,28 @@
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+class UserAccount implements User {
+  constructor(
+    public id: number,
+    public name: string,
+    public email: string,
+    public isActive: boolean = true
+  ) {}
+
+  toggleActive(): void {
+    this.isActive = !this.isActive;
+  }
+
+  displayInfo(): void {
+    console.log(`User: ${this.name}, Email: ${this.email}, Active: ${this.isActive}`);
+  }
+}
+
+function createUser(name: string, email: string): User {
+  const id = Math.floor(Math.random() * 1000); // Generate a random id
+  return new UserAccount(id, name, email);
+}
