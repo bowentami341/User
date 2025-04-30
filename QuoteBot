@@ -1,0 +1,12 @@
+import random
+
+quotes = [
+    "Keep it simple.",
+    "Stay curious.",
+    "Make it happen.",
+    "Less is more.",
+    "Code is poetry."
+]
+
+print("Random Quote of the Day:")
+print(random.choice(quotes))
